@@ -1,0 +1,16 @@
+<?php
+$con = mysql_connect("localhost","root","qwerty");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db("my_db", $con);
+$sql="INSERT INTO lines ( line) VALUES ('".$_GET["line"]."')";
+mysql_query($sql);
+
+mysql_query("INSERT INTO lines ( line) VALUES ('000')");
+
+
+mysql_close($con);
+?>
